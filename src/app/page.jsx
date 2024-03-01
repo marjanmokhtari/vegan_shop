@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import './globals.css'
-import Bg from '../app/assets/img/layer.webp'
+import Bg from '../app/assets/img/layer1.jpg'
 import Bg2 from '../app/assets/img/layer-overlay.png'
 import pic1 from '../app/assets/img/pic1.webp'
 import pic2 from '../app/assets/img/pic2.webp'

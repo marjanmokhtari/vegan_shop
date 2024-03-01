@@ -8,8 +8,9 @@ import Hilogo from '../app/assets/img/h4-logo-x2.webp'
 import Image from "next/image";
 import Link from "next/link";
 import { HiMenuAlt4 } from "react-icons/hi";
+import localFont  from 'next/font/local'
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "vegan chocolate",
@@ -25,13 +26,25 @@ export const metadata = {
   },
 };
 
+const myFont = localFont({
+  src: "./assets/font/Marcellus-Regular.ttf",
+  display: "swap",
+});
+
+const font2 =localFont({
+  src: "./assets/font/DancingScript-Regular.ttf",
+  display: "swap",
+
+})
+ 
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
         <link rel="icon" href="/logo.ico" sizes="any" />
       </head>
-      <body className={inter.className}>
+      <body className={myFont.className}>
         <MyHeader></MyHeader>
         {children}
       </body>
@@ -55,7 +68,7 @@ function MyHeader() {
             </ul>
           </nav>
         </section>
-        <section className=" w-full flex lg:justify-center justify-start ">
+        <section className=" w-full flex lg:justify-center justify-star  ">
           <figure>
             <Image className=" lg:w-[80px] w-[50px]" src={Hilogo}></Image>
           </figure>
