@@ -3,7 +3,10 @@ import "./globals.css";
 import { CiUser } from "react-icons/ci";
 import { PiHeartStraightLight } from "react-icons/pi";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
-import { TbMenu } from "react-icons/tb";
+import { TbH4, TbMenu } from "react-icons/tb";
+import Hilogo from '../app/assets/img/h4-logo-x2.webp'
+import Image from "next/image";
+import { HiMenuAlt4 } from "react-icons/hi";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,9 +41,9 @@ export default function RootLayout({ children }) {
 
 function MyHeader() {
   return (
-    <header className=" w-full ">
-      <section className=" w-full flex *:w-1/2 justify-between px-10 py-8">
-        <section>
+    <header className=" w-full relative ">
+      <section className=" w-full flex  justify-evenly px-10 py-8">
+        <section className=" hidden lg:flex w-[40%]">
           <nav className=" w-full ">
             <ul className=" w-full flex text-[#d1b17b] uppercase text-sm *:mx-5">
               <li>home</li>
@@ -51,8 +54,12 @@ function MyHeader() {
             </ul>
           </nav>
         </section>
-        <section className=" bg-red-700 py-5">dfsdsf</section>
-        <section>
+        <section className=" w-full flex lg:justify-center justify-start ">
+          <figure>
+            <Image className=" lg:w-[80px] w-[50px]" src={Hilogo}></Image>
+          </figure>
+        </section>
+        <section className=" hidden lg:flex w-[40%]">
           <nav className=" w-full flex justify-end">
             <ul className=" w-full flex justify-end text-[#d1b17b] uppercase text-xl *:mx-5">
               <li><CiUser></CiUser></li>
@@ -61,6 +68,9 @@ function MyHeader() {
               <li><TbMenu></TbMenu></li>
             </ul>
           </nav>
+        </section>
+        <section className=" w-1/2 flex justify-end lg:hidden">
+          <HiMenuAlt4 className=" text-4xl text-[#d1b17b]"></HiMenuAlt4>
         </section>
       </section>
     </header>
