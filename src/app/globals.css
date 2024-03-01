@@ -26,3 +26,8 @@ background-color:#233e2d
     text-wrap: balance;
   }
 }
+.myabs{
+  transform: translate(-50%,-50%);
+  top:0;
+  left: 50%;
+}
