@@ -17,8 +17,7 @@
 }
 
 body {
-background-color:#233e2d
-;
+  background-color: #233e2d;
 }
 
 @layer utilities {
@@ -26,8 +25,59 @@ background-color:#233e2d
     text-wrap: balance;
   }
 }
-.myabs{
-  transform: translate(-50%,-50%);
-  top:0;
+
+.myabs {
+  transform: translate(-50%, -50%);
+  top: 0;
   left: 50%;
+}
+
+.myhover::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.592);
+  opacity: 0;
+  transition: .6s;
+
+}
+
+.myhover:hover::after {
+  opacity: 1;
+
+
+}
+
+.myicon {
+  transform: translate(-50%, -50%);
+
+}
+
+.oneicon {
+  transform: translateY(1000%);
+  transition: .4s;
+
+}
+
+.towicon {
+  transform: translateY(-1000%);
+  transition: .4s;
+}
+
+.myhover:hover .oneicon,
+.myhover:hover .towicon {
+  top: 0;
+  transition: 1s;
+}
+
+.myhover:hover .oneicon {
+  transform: translateY(0);
+
+}
+
+.myhover:hover .towicon {
+  transform: translateY(0);
 }

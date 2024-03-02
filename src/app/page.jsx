@@ -8,6 +8,7 @@ import pic2 from '../app/assets/img/pic2.webp'
 import pic3 from '../app/assets/img/pic3.webp'
 import Row_one from "./assets/row/row_one";
 import Row_tow from "./assets/row/row_tow";
+import Row_three from "./assets/row/row3";
 
 export default function Home() {
   return (
@@ -34,11 +35,12 @@ export default function Home() {
 
 
       </section>
-      <main className=" w-full  bg-[#233e2d] flex justify-center z-50 pt-10">
-        <section className="  w-full 2xl:container flex flex-wrap ">
+      <main className=" w-full  bg-[#233e2d] flex flex-wrap justify-center z-50 pt-10">
+        <section className="2xl:container w-full flex flex-wrap ">
           <Row_one></Row_one>
-          <Row_tow></Row_tow>
+          <Row_tow ></Row_tow>
         </section>
+          <Row_three></Row_three>
       </main>
     </>
   );
