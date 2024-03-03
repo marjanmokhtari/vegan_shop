@@ -39,7 +39,7 @@ function Ftch_data() {
 
   useEffect(() => {
     async function fetchData() {
-      let x = await fetch('https://65cdd5b0c715428e8b3f363d.mockapi.io/chocolot')
+      let x = await fetch('https://65cdd5b0c715428e8b3f363d.mockapi.io/chocolot ')
       let y = await x.json()
       SetMydata(y)
 
@@ -48,10 +48,11 @@ function Ftch_data() {
   }, [])
 
 
-  function Addcart(id, img, price, name) {
-    AddToCart(id, img, price, name)
+  function Addcart(id, avatar, price, name) {
+    AddToCart(id, avatar, price, name)
 
   }
+  
 
   return (
     <section className=' w-full mt-20 flex justify-center'>
@@ -60,15 +61,15 @@ function Ftch_data() {
           return (
             <section className=' w-full  flex flex-wrap  justify-center text-white *:w-full *:text-center'>
               <figure className=' relative myhover mx-2'>
-                <img className='' src={val.img} alt="" />
+                <Image width={1000} height={1000} src={val.avatar} alt="" style={{width:"100%",height:"100%"}} />
                 <div className=' absolute top-[50%]  left-[50%] text-3xl myicon flex overflow-hidden z-20 p-3'>
-                  <FiPlus onClick={() => Addcart(val.id, val.img, val.price, val.name)} className='oneicon bg-[#a78957] border text-3xl mx-1 p-1'></FiPlus>
+                  <FiPlus onClick={() => Addcart(val.id, val.avatar, val.price, val.name)} className='oneicon bg-[#a78957] border text-3xl mx-1 p-1'></FiPlus>
                   <PiHeartStraightLight className='towicon bg-[#a78957] border mx-1 p-1  text-3xl' />
                 </div>
               </figure>
               <h6 className=' mt-4 uppercase'>{val.name}</h6>
-              <span className=' my-1'>{val.category}</span>
-              <span className=' '>${val.price}</span>
+              <span className=' my-1'>{val.Category}</span>
+              <span className=' '>${val.price}.00</span>
             </section>
           )
         })}

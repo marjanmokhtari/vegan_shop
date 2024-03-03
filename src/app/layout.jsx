@@ -11,6 +11,7 @@ import { HiMenuAlt4 } from "react-icons/hi";
 import localFont from 'next/font/local'
 import useStore from "../app/store";
 import { useState } from "react";
+import { IoCloseOutline } from "react-icons/io5";
 
 
 
@@ -60,6 +61,16 @@ function MyHeader() {
   const [cart, AddToCart] = useStore((state) => [state.cart, state.AddToCart])
   console.log(cart);
 
+
+  let totalprice
+  function calculat_total(cart) {
+    totalprice = 0
+    for(let i=0;i<cart.length;i++) {
+      totalprice+=cart[i].price
+    }
+    return(totalprice)
+    
+  }
   return (
     <header className=" w-full relative ">
       <section className=" w-full flex  justify-evenly px-10 py-8">
@@ -86,15 +97,24 @@ function MyHeader() {
               <li><CiUser></CiUser></li>
               <li><PiHeartStraightLight></PiHeartStraightLight></li>
               <li className=" relative"><HiOutlineShoppingBag></HiOutlineShoppingBag>
-                <ul className=" absolute">
-                  {cart.map((val)=>{
-                    return(
-                      <li>
-                        <img src={val.img} alt="" />
-                        <span>{val.name}</span>
+                <ul className=" absolute w-[300px] h-[500px] bg-white overflow-y-scroll -right-2 top-10 *:my-4 p-4 ">
+                  {cart.map((val) => {
+                    return (
+                      <li className=" flex *:w-1/3 justify-between ">
+                        <figure>
+                          <Image width={1000} height={1000} className=" w-[80px]" src={val.avatar} alt="" />
+                        </figure>
+                        <div className=" *:w-full flex flex-wrap  ">
+                          <span className=" text-black text-sm ">{val.name}</span>
+                          <span className=" text-gray-600 text-sm">${val.price}.00</span>
+                        </div>
+                        <span className=" text-black flex justify-end">
+                          <IoCloseOutline></IoCloseOutline>
+                        </span>
                       </li>
                     )
                   })}
+                  <li>{calculat_total(cart)}</li>
                 </ul>
               </li>
               <li><TbMenu></TbMenu></li>

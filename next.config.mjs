@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    images:{
+        domains:['avelina.qodeinteractive.com']
+    }
+};
 
 export default nextConfig;
