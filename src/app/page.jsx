@@ -10,6 +10,7 @@ import Row_one from "./assets/row/row_one";
 import Row_tow from "./assets/row/row_tow";
 import Row_three from "./assets/row/row3";
 import Row_four from "./assets/row/row4";
+import Row5 from "./assets/row/row5";
 export default function Home() {
   return (
     <>
@@ -45,6 +46,7 @@ export default function Home() {
           <section className=" 2xl:container w-full flex flex-wrap">
             <Row_four></Row_four>
           </section>
+          <Row5></Row5>
       </main>
     </>
   );
