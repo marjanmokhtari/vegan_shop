@@ -9,7 +9,7 @@ import pic3 from '../app/assets/img/pic3.webp'
 import Row_one from "./assets/row/row_one";
 import Row_tow from "./assets/row/row_tow";
 import Row_three from "./assets/row/row3";
-
+import Row_four from "./assets/row/row4";
 export default function Home() {
   return (
     <>
@@ -39,8 +39,12 @@ export default function Home() {
         <section className="2xl:container w-full flex flex-wrap ">
           <Row_one></Row_one>
           <Row_tow ></Row_tow>
+          
         </section>
           <Row_three></Row_three>
+          <section className=" 2xl:container w-full flex flex-wrap">
+            <Row_four></Row_four>
+          </section>
       </main>
     </>
   );

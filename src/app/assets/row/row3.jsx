@@ -25,13 +25,13 @@ export default function Row3() {
         </section>
       </section>
       <section className=' *:lg:w-1/2 *:w-full flex flex-wrap items-center '>
-        <section className='  *:my-5 text-white px-10 lg:px-28  flex flex-wrap *:w-full py-24 lg:py-0 h-full w-full  content-center *:h-full'>
+        <section className='  *:my-5 text-white px-10 lg:px-28  flex flex-wrap justify-center *:w-full py-24 lg:py-0 h-full w-full  content-center *:h-full'>
           <section className=' flex justify-center '>
-            <figure>
+            <figure >
               <Image src={Ic3}></Image>
             </figure>
-            <div className=' px-5 *:w-2/3 *:lg:w-full'>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
+            <div className=' px-5 *:w-2/3 *:lg:w-full  flex md:justify-center items-center'>
+              <p className=''>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum</p>
             </div>
           </section>
 
@@ -39,8 +39,8 @@ export default function Row3() {
             <figure>
               <Image src={Ic2}></Image>
             </figure>
-            <div className=' px-5 *:w-2/3 *:lg:w-full'>
-              <p>
+            <div className=' px-5 *:w-2/3 *:lg:w-full flex md:justify-center items-center'>
+              <p className='' >
                 Deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non
 
               </p>
@@ -51,8 +51,8 @@ export default function Row3() {
             <figure>
               <Image src={Ic3}></Image>
             </figure>
-            <div className=' px-5 *:w-2/3 *:lg:w-full'>
-              <p>Corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa</p>
+            <div className=' px-5 *:w-2/3 *:lg:w-full flex md:justify-center items-center'>
+              <p className='' >Corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa</p>
             </div>
           </section>
 
@@ -63,10 +63,10 @@ export default function Row3() {
       </section>
       <section className=' *:lg:w-1/2 *:w-full flex flex-wrap items-center'>
         <section>
-          <Image src={Pic3}></Image>
+          <Image className=' w-full h-full object-cover' src={Pic3}></Image>
         </section>
-        <section className=' px-10 lg:px-28  '>
-          <p className=' w-full'>MADE FROM FINEST INGREDIENTS BY BEST FRANCE CHOCOLATE MASTERS. DISCOVER ALL PRODUCTS.</p>
+        <section className=' px-10 lg:px-28 py-14 md:py-0  '>
+          <p className=' w-full text-white py-7 md:text-3xl text-xl '>MADE FROM FINEST INGREDIENTS BY BEST FRANCE CHOCOLATE MASTERS. DISCOVER ALL PRODUCTS.</p>
           <div className=' cursor-pointer'>
             <span className=' text-[#A78957]  border border-[#A78957]  text-sm w-[180px] uppercase justify-center  flex py-2'>shop gift</span>
           </div>
