@@ -76,7 +76,7 @@ function Ftch_data() {
               <h6 className=' mt-4 uppercase'>{val.name}</h6>
               <span className=' my-1'>{val.Category}</span>
               <span className=' '>${val.price}.00</span>
-              <Link href={'row/'+val.id}>link</Link>
+            
             </section>
           )
         })}
