@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { FiPlus } from "react-icons/fi";
 import { PiHeartStraightLight } from "react-icons/pi";
 import useStore from '../../store';
+import Link from 'next/link';
 const myFont = localFont({
   src: "../font/DancingScript-Regular.ttf",
   display: "swap",
@@ -56,16 +57,17 @@ function Ftch_data() {
     AddToCart(id, avatar, price, name)
 
   }
-  
+
 
   return (
     <section className=' w-full mt-20 flex justify-center'>
       <section className='w-full lg:mx-28 mx-8 *:flex *:w-1/2 flex-wrap *:px-2 flex *:lg:w-1/4 *:my-7  '>
         {mydata && mydata.map((val) => {
+         
           return (
             <section className=' w-full  flex flex-wrap  justify-center text-white *:w-full *:text-center'>
               <figure className=' relative myhover mx-2'>
-                <Image width={1000} height={1000} src={val.avatar} alt="" style={{width:"100%",height:"100%"}} />
+                <Image width={1000} height={1000} src={val.avatar} alt="" style={{ width: "100%", height: "100%" }} />
                 <div className=' absolute top-[50%]  left-[50%] text-3xl myicon flex overflow-hidden z-20 p-3'>
                   <FiPlus onClick={() => Addcart(val.id, val.avatar, val.price, val.name)} className='oneicon bg-[#a78957] border text-3xl mx-1 p-1'></FiPlus>
                   <PiHeartStraightLight className='towicon bg-[#a78957] border mx-1 p-1  text-3xl' />
@@ -74,6 +76,7 @@ function Ftch_data() {
               <h6 className=' mt-4 uppercase'>{val.name}</h6>
               <span className=' my-1'>{val.Category}</span>
               <span className=' '>${val.price}.00</span>
+              <Link href={'row/'+val.id}>link</Link>
             </section>
           )
         })}

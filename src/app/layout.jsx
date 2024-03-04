@@ -59,9 +59,9 @@ export default function RootLayout({ children }) {
 function MyHeader() {
   const cartState = useStore((state) => state);
   if (!cartState) {
-    return null; // یا مقدار دیگری که شما برای نمایش خطایی یا اطلاعات پیشفرض مد نظر دارید
+    return null
   }
-  const { cart, AddToCart } = cartState;
+  const { cart, removeFromCart } = cartState;
 
 
 
@@ -115,7 +115,7 @@ function MyHeader() {
                                 <span className=" text-gray-600 text-sm">${val.price}.00</span>
                               </div>
                               <span className=" text-black flex justify-end pe-2 cursor-pointer">
-                                <IoCloseOutline></IoCloseOutline>
+                                <IoCloseOutline onClick={()=>removeFromCart(val.id)}></IoCloseOutline>
                               </span>
                             </li>
                           )

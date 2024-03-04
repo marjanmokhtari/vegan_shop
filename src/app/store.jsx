@@ -35,6 +35,12 @@ const useStore = create((set) => {
                     return {
                         cart: updateCart
                     };
+                }),
+            removeFromCart: (id) =>
+                set((state) => {
+                    const updatedCart = state.cart.filter((item) => item.id !== id);
+                    localStorage.setItem("cart", JSON.stringify(updatedCart));
+                    return { ...state, cart: updatedCart };
                 })
         };
 

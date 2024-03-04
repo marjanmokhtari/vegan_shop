@@ -7,11 +7,12 @@ import pic1 from '../app/assets/img/pic1.webp'
 import pic2 from '../app/assets/img/pic2.webp'
 import pic3 from '../app/assets/img/pic3.webp'
 import Row_one from "./assets/row/row_one";
-import Row_tow from "./assets/row/row_tow";
+import Row_tow from "./assets/row/page";
 import Row_three from "./assets/row/row3";
 import Row_four from "./assets/row/row4";
 import Row5 from "./assets/row/row5";
 import Row6 from "./assets/row/row6";
+import MyFooter from "./assets/row/row7";
 export default function Home() {
   return (
     <>
@@ -49,6 +50,7 @@ export default function Home() {
           </section>
           <Row5></Row5>
           <Row6></Row6>
+          <MyFooter></MyFooter>
           
       </main>
     </>
