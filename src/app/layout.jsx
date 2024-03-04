@@ -6,11 +6,9 @@ import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { TbH4, TbMenu } from "react-icons/tb";
 import Hilogo from '../app/assets/img/h4-logo-x2.webp'
 import Image from "next/image";
-import Link from "next/link";
 import { HiMenuAlt4 } from "react-icons/hi";
 import localFont from 'next/font/local'
 import useStore from "../app/store";
-import { useState } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 
 
@@ -77,7 +75,7 @@ function MyHeader() {
         <section className=" hidden lg:flex w-[40%]">
           <nav className=" w-full ">
             <ul className=" w-full flex text-[#d1b17b] uppercase text-sm *:mx-5">
-              <li><Link href='/assets/loc'>home</Link></li>
+              <li>home</li>
               <li>pages</li>
               <li>shop</li>
               <li>blog</li>

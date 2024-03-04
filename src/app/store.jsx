@@ -1,12 +1,15 @@
 import { create } from 'zustand'
 
 const useStore = create((set) => {
-  
-        const storeCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+
+    if (typeof window !== 'undefined') {
+
+        let storeCart = JSON.parse(localStorage.getItem('cart')) || []
         set({
             cart: storeCart,
         })
-    
+
         return {
             cart: storeCart,
             AddToCart: (id, avatar, price, name) =>
@@ -19,7 +22,7 @@ const useStore = create((set) => {
                             cart: updateCart
                         };
                     }
-    
+
                     const updateCart = [
                         ...state.cart,
                         {
@@ -29,16 +32,16 @@ const useStore = create((set) => {
                             name: name
                         }
                     ];
-    
+
                     localStorage.setItem('cart', JSON.stringify(updateCart));
                     return {
                         cart: updateCart
                     };
                 })
         };
-    
 
-   
+    }
+
 });
 
 export default useStore;
