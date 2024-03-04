@@ -35,7 +35,7 @@ function Ftch_data() {
 
   const cartState = useStore((state) => state);
   if (!cartState) {
-    return null; // یا مقدار دیگری که شما برای نمایش خطایی یا اطلاعات پیشفرض مد نظر دارید
+    return null;
   }
   const { cart, AddToCart } = cartState;
 

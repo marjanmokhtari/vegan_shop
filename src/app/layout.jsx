@@ -99,26 +99,40 @@ function MyHeader() {
             <ul className=" w-full flex justify-end text-[#d1b17b] uppercase text-xl *:mx-5">
               <li><CiUser></CiUser></li>
               <li><PiHeartStraightLight></PiHeartStraightLight></li>
-              <li className=" relative"><HiOutlineShoppingBag></HiOutlineShoppingBag>
-                <ul className=" absolute w-[300px] h-[500px] bg-white overflow-y-scroll -right-2 top-10 *:my-4 p-4 ">
-                  {cart && cart.map((val) => {
-                    return (
-                      <li className=" flex *:w-1/3 justify-between ">
-                        <figure>
-                          <Image width={1000} height={1000} className=" w-[80px]" src={val.avatar} alt="" />
-                        </figure>
-                        <div className=" *:w-full flex flex-wrap  ">
-                          <span className=" text-black text-sm ">{val.name}</span>
-                          <span className=" text-gray-600 text-sm">${val.price}.00</span>
-                        </div>
-                        <span className=" text-black flex justify-end">
-                          <IoCloseOutline></IoCloseOutline>
-                        </span>
+              <li className=" relative hov"><HiOutlineShoppingBag></HiOutlineShoppingBag>
+                <div className="absolute  mymenu w-[300px] h-[500px] bg-white -right-2 top-10  p-4 overflow-hidden  ">
+                  <div className=" h-[80%] w-full  overflow-y-scroll myscroll">
+                    <ul className=" w-full ">
+                      <li className=" relative  *:my-4">
+                        {cart && cart.map((val) => {
+                          return (
+                            <li className=" flex *:w-1/3 justify-between content-start ">
+                              <figure>
+                                <Image width={1000} height={1000} className=" w-[80px]" src={val.avatar} alt="" />
+                              </figure>
+                              <div className=" *:w-full flex flex-wrap  ">
+                                <span className=" text-black text-sm ">{val.name}</span>
+                                <span className=" text-gray-600 text-sm">${val.price}.00</span>
+                              </div>
+                              <span className=" text-black flex justify-end pe-2 cursor-pointer">
+                                <IoCloseOutline></IoCloseOutline>
+                              </span>
+                            </li>
+                          )
+                        })}
                       </li>
-                    )
-                  })}
-                  <li>{calculat_total(cart)}</li>
-                </ul>
+                    </ul>
+                  </div>
+                  <div className=" absolute  w-full bottom-0 left-0 h-[20%] text-[#63605a] p-2">
+                    <div className="text-sm  flex *:w-1/2  justify-between">
+                      <span>Total:</span>
+                      <span className=" flex justify-end">${calculat_total(cart)}.00</span>
+                    </div>
+                    <div className=" py-2">
+                      <span className=" flex justify-center text-sm border border-[#A78957] py-2 text-[#A78957]">check out</span>
+                    </div>
+                  </div>
+                </div>
               </li>
               <li><TbMenu></TbMenu></li>
             </ul>

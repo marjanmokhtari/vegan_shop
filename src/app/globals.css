@@ -81,3 +81,15 @@ body {
 .myhover:hover .towicon {
   transform: translateY(0);
 }
+
+.mymenu{
+  opacity: 0;
+  visibility: hidden;
+  transition: .4s;
+
+}
+
+.hov:hover .mymenu{
+  opacity: 1;
+  visibility: visible;
+}
