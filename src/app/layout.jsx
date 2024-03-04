@@ -10,6 +10,7 @@ import { HiMenuAlt4 } from "react-icons/hi";
 import localFont from 'next/font/local'
 import useStore from "../app/store";
 import { IoCloseOutline } from "react-icons/io5";
+import { useEffect } from "react";
 
 
 
@@ -56,18 +57,22 @@ export default function RootLayout({ children }) {
 
 
 function MyHeader() {
-  const [cart, AddToCart] = useStore((state) => [state.cart, state.AddToCart])
-  console.log(cart);
+  const cartState = useStore((state) => state);
+  if (!cartState) {
+    return null; // یا مقدار دیگری که شما برای نمایش خطایی یا اطلاعات پیشفرض مد نظر دارید
+  }
+  const { cart, AddToCart } = cartState;
+
 
 
   let totalprice
   function calculat_total(cart) {
     totalprice = 0
-    for(let i=0;i<cart.length;i++) {
-      totalprice+=cart[i].price
+    for (let i = 0; i < cart.length; i++) {
+      totalprice += cart[i].price
     }
-    return(totalprice)
-    
+    return (totalprice)
+
   }
   return (
     <header className=" w-full relative ">
@@ -96,7 +101,7 @@ function MyHeader() {
               <li><PiHeartStraightLight></PiHeartStraightLight></li>
               <li className=" relative"><HiOutlineShoppingBag></HiOutlineShoppingBag>
                 <ul className=" absolute w-[300px] h-[500px] bg-white overflow-y-scroll -right-2 top-10 *:my-4 p-4 ">
-                  {cart.map((val) => {
+                  {cart && cart.map((val) => {
                     return (
                       <li className=" flex *:w-1/3 justify-between ">
                         <figure>

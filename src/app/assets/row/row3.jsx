@@ -3,7 +3,6 @@ import Image from 'next/image'
 import Pic1 from '../img/h4-img-1.jpg'
 import Pic2 from '../img/h4-img-2.jpg'
 import Pic3 from '../img/h4-img-3.jpg'
-import Ic1 from '../img/h4-icon-1-x2.png'
 import Ic2 from '../img/h4-icon-2-x2.png'
 import Ic3 from '../img/h4-icon-3-x2.png'
 export default function Row3() {

@@ -2,10 +2,8 @@ import { create } from 'zustand'
 
 const useStore = create((set) => {
 
-
     if (typeof window !== 'undefined') {
-
-        let storeCart = JSON.parse(localStorage.getItem('cart')) || []
+        const storeCart = JSON.parse(localStorage.getItem('cart')) || []
         set({
             cart: storeCart,
         })

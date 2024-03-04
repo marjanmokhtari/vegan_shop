@@ -31,9 +31,13 @@ export default function row_tow() {
 
 function Ftch_data() {
   const [mydata, SetMydata] = useState([])
-  const [cart, AddToCart] = useStore((state) => [state.cart, state.AddToCart]);
 
 
+  const cartState = useStore((state) => state);
+  if (!cartState) {
+    return null; // یا مقدار دیگری که شما برای نمایش خطایی یا اطلاعات پیشفرض مد نظر دارید
+  }
+  const { cart, AddToCart } = cartState;
 
 
 
