@@ -11,6 +11,7 @@ import localFont from 'next/font/local'
 import useStore from "../app/store";
 import { IoCloseOutline } from "react-icons/io5";
 import { useEffect } from "react";
+import Link from "next/link";
 
 
 
@@ -79,7 +80,7 @@ function MyHeader() {
       <section className=" w-full flex  justify-evenly px-10 py-8">
         <section className=" hidden lg:flex w-[40%]">
           <nav className=" w-full ">
-            <ul className=" w-full flex text-[#d1b17b] uppercase text-sm *:mx-5">
+            <ul className=" w-full flex text-[#d1b17b] uppercase text-sm *:mx-5 cursor-pointer ">
               <li>home</li>
               <li>pages</li>
               <li>shop</li>
@@ -99,7 +100,9 @@ function MyHeader() {
             <ul className=" w-full flex justify-end text-[#d1b17b] uppercase text-xl *:mx-5">
               <li><CiUser></CiUser></li>
               <li><PiHeartStraightLight></PiHeartStraightLight></li>
-              <li className=" relative hov"><HiOutlineShoppingBag></HiOutlineShoppingBag>
+              <li className=" relative hov flex cursor-pointer ">
+                <HiOutlineShoppingBag></HiOutlineShoppingBag>
+                <li className="text-xs">{cart.length}</li>
                 <div className="absolute  mymenu w-[300px] h-[500px] bg-white -right-2 top-10  p-4 overflow-hidden  ">
                   <div className=" h-[80%] w-full  overflow-y-scroll myscroll">
                     <ul className=" w-full ">
@@ -115,7 +118,7 @@ function MyHeader() {
                                 <span className=" text-gray-600 text-sm">${val.price}.00</span>
                               </div>
                               <span className=" text-black flex justify-end pe-2 cursor-pointer">
-                                <IoCloseOutline onClick={()=>removeFromCart(val.id)}></IoCloseOutline>
+                                <IoCloseOutline onClick={() => removeFromCart(val.id)}></IoCloseOutline>
                               </span>
                             </li>
                           )
@@ -129,7 +132,9 @@ function MyHeader() {
                       <span className=" flex justify-end">${calculat_total(cart)}.00</span>
                     </div>
                     <div className=" py-2">
-                      <span className=" flex justify-center text-sm border border-[#A78957] py-2 text-[#A78957]">check out</span>
+                      <span className=" flex justify-center text-sm border border-[#A78957] py-2 text-[#A78957] cursor-pointer">
+                        <Link href={'/assets/row/checkout'}>check out</Link>
+                      </span>
                     </div>
                   </div>
                 </div>

@@ -10,7 +10,7 @@ const useStore = create((set) => {
 
         return {
             cart: storeCart,
-            AddToCart: (id, avatar, price, name) =>
+            AddToCart: (id, avatar, price, name,quantity) =>
                 set((state) => {
                     const exist = state.cart.findIndex((item) => item.id === id);
                     if (exist !== -1) {
@@ -27,7 +27,8 @@ const useStore = create((set) => {
                             id: id,
                             avatar: avatar,
                             price: price,
-                            name: name
+                            name: name,
+                            quantity:quantity
                         }
                     ];
 

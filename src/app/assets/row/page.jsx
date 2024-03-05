@@ -53,8 +53,8 @@ function Ftch_data() {
   }, [])
 
 
-  function Addcart(id, avatar, price, name) {
-    AddToCart(id, avatar, price, name)
+  function Addcart(id, avatar, price, name,quantity) {
+    AddToCart(id, avatar, price, name,quantity)
 
   }
 
@@ -69,7 +69,7 @@ function Ftch_data() {
               <figure className=' relative myhover mx-2'>
                 <Image width={1000} height={1000} src={val.avatar} alt="" style={{ width: "100%", height: "100%" }} />
                 <div className=' absolute top-[50%]  left-[50%] text-3xl myicon flex overflow-hidden z-20 p-3'>
-                  <FiPlus onClick={() => Addcart(val.id, val.avatar, val.price, val.name)} className='oneicon bg-[#a78957] border text-3xl mx-1 p-1'></FiPlus>
+                  <FiPlus onClick={() => Addcart(val.id, val.avatar, val.price, val.name,val.quantity)} className='oneicon bg-[#a78957] border text-3xl mx-1 p-1'></FiPlus>
                   <PiHeartStraightLight className='towicon bg-[#a78957] border mx-1 p-1  text-3xl' />
                 </div>
               </figure>
