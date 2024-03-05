@@ -48,37 +48,54 @@ export default function page() {
         });
     };
 
+    const calculate_subtotal = (price, qty) => {
+        return price * qty
+
+    }
+
     return (
 
         <section className=' w-full py-2  text-white '>
-            <section className=' flex px-28 *:w-full flex-wrap'>
-                <section className=' *:w-1/4 flex *:my-4 border-b '>
+            <section className=' flex md:px-28 px-12 *:w-full flex-wrap'>
+                <section className=' *:md:w-1/4 *:w-1/2 flex *:my-4 border-b '>
                     <span>PRODUCT</span>
-                    <span>PRICE</span>
+                    <span className=' hidden md:flex'>PRICE</span>
                     <span>QUANTITY</span>
-                    <span>SUBTOTAL</span>
+                    <span className=' hidden md:flex'>SUBTOTAL</span>
                 </section>
                 {cart && cart.map((val) => {
                     return (
                         <section className={myFont.className}>
-                            <section className=' *:w-1/4 flex *:my-4 border-b myfont'>
+                            <section className=' *:md:w-1/4 *:w-full flex *:my-4 border-b myfont'>
                                 <div className=' flex items-center'>
                                     <Image style={{ width: '60px' }} width={100} height={100} src={val.avatar}></Image>
                                     <span className=' text-xs px-2'>{val.name}</span>
                                 </div>
-                                <span>${val.price}.00</span>
+                                <span className=' hidden md:flex'>${val.price}.00</span>
                                 <div className=' flex items-center *:border *:p-3'>
                                     <button onClick={() => incrementQuantity(val.id)}>+</button>
                                     <span>{val.quantity}</span>
                                     <button onClick={() => decrementQuantity(val.id)}>-</button>
                                 </div>
+                                <span className=' md:flex items-center hidden'>${calculate_subtotal(val.price, val.quantity)}.00</span>
 
                             </section>
                         </section>
                     )
 
                 })}
+                <section className=' w-full *:md:w-1/2 *:w-full flex flex-wrap justify-between my-10'>
+                    <div className=' flex w-full'>
+                        <input placeholder='coupon code' type="text" className=' outline-none border-b bg-transparent py-2 ' />
+                        <div className=' mx-2 bg-[#A78957] w-[200px] py-2 flex items-center justify-center uppercase cursor-pointer text-sm'>
+                            <span>applay coupon</span>
+                        </div>
+                    </div>
+                    
+                </section>
             </section>
+
+
 
         </section>
     )

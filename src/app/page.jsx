@@ -12,7 +12,7 @@ import Row_three from "./assets/row/row3";
 import Row_four from "./assets/row/row4";
 import Row5 from "./assets/row/row5";
 import Row6 from "./assets/row/row6";
-import MyFooter from "./assets/row/row7";
+
 export default function Home() {
   return (
     <>
@@ -50,7 +50,7 @@ export default function Home() {
           </section>
           <Row5></Row5>
           <Row6></Row6>
-          <MyFooter></MyFooter>
+         
           
       </main>
     </>

@@ -12,7 +12,7 @@ import useStore from "../app/store";
 import { IoCloseOutline } from "react-icons/io5";
 import { useEffect } from "react";
 import Link from "next/link";
-
+import MyFooter from "./assets/row/row7";
 
 
 
@@ -51,6 +51,7 @@ export default function RootLayout({ children }) {
       <body className={myFont.className}>
         <MyHeader></MyHeader>
         {children}
+        <MyFooter></MyFooter>
       </body>
     </html>
   );
