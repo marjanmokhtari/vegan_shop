@@ -6,7 +6,7 @@
 
   <p align="center">
     <br />
-    <a href="https://vegan-shop-chocolot.vercel.app/">[View Demo]</a>
+    <a href="https://vegan-shop-chocolot.vercel.app/">[View Demo] *VPN</a>
       <p>Technologies Used - Next.js , React , tailwind , zustand 
         <br/>
         <br/>
